@@ -34,12 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new MutationObserver(() => {
     const watermark = document.querySelector('a[href*="elfsight.com"]');
     if (watermark) {
-      watermark.remove(); // Completely remove the watermark
-      observer.disconnect(); // Stop observing once the watermark is removed
+      watermark.remove();
+      observer.disconnect();
     }
   });
 
-  // Start observing the body for DOM changes
   observer.observe(document.body, {
     childList: true,
     subtree: true,
